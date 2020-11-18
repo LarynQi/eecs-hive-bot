@@ -32,7 +32,5 @@ def main():
                     pass
                 time.sleep(1)
 
-main()
-
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()
