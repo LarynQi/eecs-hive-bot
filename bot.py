@@ -17,19 +17,21 @@ def main():
     for m in UNAVAILABLE:
         machines.remove(m)
     count = 1
+    machines = [6]
     while True:
         for m in machines:
             for p in PORTS:
                 url = hive_url.format(m, p, msg)
                 try:
-                    response = urllib.request.urlopen(url)
+                    response = urllib.request.urlopen(url, timeout=5)
                     # https://stackoverflow.com/questions/25837452/python-get-current-time-in-right-timezone
                     utc_dt = datetime.now(timezone.utc)
                     dt = utc_dt.astimezone()
-                    print(f"Successful Connection #{count}: {hive_url.format(m, p, str())} at {dt.strftime(fmt)}")
+                    # print(f"Successful Connection #{count}: {hive_url.format(m, p, str())} at {dt.strftime(fmt)}")
+                    print(f"Successful Connection #{count}: {hive_url.format(m, p, str())}")
                     count += 1
                 except Exception as e:
-                    print(hive_url.format(m, p, str()), e)
+                    # print(hive_url.format(m, p, str()), e)
                     pass
                 time.sleep(1)
 
