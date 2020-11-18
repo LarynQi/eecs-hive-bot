@@ -17,7 +17,6 @@ def main():
     for m in UNAVAILABLE:
         machines.remove(m)
     count = 1
-    machines = [6]
     while True:
         for m in machines:
             for p in PORTS:
