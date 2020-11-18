@@ -29,6 +29,7 @@ def main():
                     print(f"Successful Connection #{count}: {hive_url.format(m, p, str())} at {dt.strftime(fmt)}")
                     count += 1
                 except Exception as e:
+                    print(e)
                     pass
                 time.sleep(1)
 
